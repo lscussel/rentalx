@@ -43,6 +43,9 @@
         "lines-between-class-members": "off",
         "import/extensions": [
         "error",
+        {
+            "endOfLine": "auto"
+        },
         "ignorePackages",
         {
             "ts": "never"
