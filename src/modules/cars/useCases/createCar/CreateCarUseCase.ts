@@ -6,10 +6,10 @@ import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { AppError } from "@shared/errors/AppError";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 
-//@injectable()
+@injectable()
 class CreateCarUseCase {
     constructor(
-        //@inject("CarsRepository")
+        @inject("CarsRepository")
         private carsRepository: ICarsRepository
     ) { }
     
