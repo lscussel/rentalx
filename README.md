@@ -17,7 +17,7 @@ Legenda
 [x] Não deve ser possível cadastrar um carro com uma placa já existente
 [ ] Não deve ser possível alterar a placa de um carro já cadastrado
 [x] Todo carro recém cadastrado deve conter a sinalização padrão sim para disponibilidade (available)
-[ ] Somente um usuário administrador poderá fazer o cadastramento de um carro
+[x] Somente um usuário administrador poderá fazer o cadastramento de um carro
 [ ] O usuário não precisa estar logado no sistema para ver a listagem de carros
 
 
