@@ -5,6 +5,11 @@ interface ICarsRepository {
     create(data: ICreateCarDTO): Promise<Car>;
     findByLicensePlate(license_plate: string): Promise<Car>;
     list(): Promise<Car[]>;
+    listAvailables(
+        name?: string,
+        brand?: string,
+        category_id?: string
+    ): Promise<Car[]>;
 };
 
 export { ICarsRepository };
