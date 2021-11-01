@@ -9,7 +9,7 @@ import { ensureAdmin } from "../middlewares/ensureAdmin";
 const carsRoutes = Router();
 
 const createCarController = new CreateCarController();
-const listCarsController = new ListAvailableCarsController();
+const listAvailableCarsController = new ListAvailableCarsController();
 
 carsRoutes.post(
     "/", 
@@ -19,10 +19,8 @@ carsRoutes.post(
 );
 
 carsRoutes.get(
-    "/",
-    listCarsController.handle
-)
-
-
+    "/availables",
+    listAvailableCarsController.handle
+);
 
 export { carsRoutes };
