@@ -7,10 +7,10 @@ Legenda
 
 **RF**
 [x] Deve ser possível cadastrar um novo carro
-[ ] Deve ser possível listar todos os carros disponíveis
-[ ] Deve ser possível listar todos os carros disponíveis por categoria
-[ ] Deve ser possível listar todos os carros disponíveis por marca
-[ ] Deve ser possível listar todos os carros disponíveis pelo nome do carro
+[x] Deve ser possível listar todos os carros disponíveis
+[x] Deve ser possível listar todos os carros disponíveis por categoria
+[x] Deve ser possível listar todos os carros disponíveis por marca
+[x] Deve ser possível listar todos os carros disponíveis pelo nome do carro
 
 
 **RN**
