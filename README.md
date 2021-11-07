@@ -39,7 +39,6 @@ Legenda
 **RF**
 [ ] Deve ser possível cadastrar a imagem do carro
 [ ] Deve ser possível cadastrar mais de uma imagem para o mesmo carro
-[ ] Deve ser possível listar todos os carros
 
 **RNF**
 [ ] Utilizar o multer para upload dos arquivos
