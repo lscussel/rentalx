@@ -1,6 +1,7 @@
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { AppError } from "@shared/errors/AppError";
 
+import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 
 interface IRequest {
@@ -11,7 +12,8 @@ interface IRequest {
 
 class CreateRentalUseCase {
     constructor(
-        private rentalsRepository: IRentalsRepository
+        private rentalsRepository: IRentalsRepository,
+        private dateProvider: IDateProvider
     ) { }
 
     async execute({
@@ -19,6 +21,8 @@ class CreateRentalUseCase {
         car_id,
         expected_return_date
     }: IRequest): Promise<Rental> {
+        const minimumCarRentalPeriodInHours = 24;
+
         const carUnavailable = await this.rentalsRepository.findOpenRentalByCar(car_id);
 
         if (carUnavailable) {
@@ -29,6 +33,14 @@ class CreateRentalUseCase {
 
         if (rentalOpenToUser) {
             throw new AppError("There is a rental in progress for user!");
+        }
+
+        const dateNow = this.dateProvider.dateNow();
+
+        const compare = this.dateProvider.compareInHours(dateNow, expected_return_date);
+
+        if (compare < minimumCarRentalPeriodInHours) {
+            throw new AppError("Invalid expeted returning date! Minimum of 24 Hous");
         }
 
         const rental = await this.rentalsRepository.create({
