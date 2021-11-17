@@ -53,6 +53,7 @@ Legenda
 [ ]  Deve ser possível realizar uma locação
 
 **RN**
+[ ]  O usuário deve estar logado na aplicação
 [ ]  O aluguel deve ter duração mínima de 24 horas
 [ ]  Um usuário não pode locar mais de um veículo simultaneamente
 [ ]  Não deve ser possível alugar simultaneamente o mesmo carro
